@@ -48,6 +48,32 @@ nav a {
 }
 
 /* =====================
+   LOGO AREA
+===================== */
+.logo-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo-area img {
+  width: 70px;
+  height: auto;
+}
+
+.logo-area h1 {
+  margin: 0;
+}
+
+.logo-area img {
+  border-radius: 50%;
+  background: white;
+  padding: 5px;
+}
+
+/* =====================
    HERO SECTION
 ===================== */
 .hero {
@@ -234,4 +260,15 @@ footer {
     display: block;
   }
 }
+
+@media (max-width: 768px) {
+  .logo-area {
+    flex-direction: column;
+  }
+
+  .logo-area img {
+    width: 60px;
+  }
+}
+
 
