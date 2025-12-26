@@ -316,3 +316,22 @@ footer {
     font-size: 16px;
   }
 }
+
+/* =====================
+   MAP STYLING
+===================== */
+.map-container {
+  margin-top: 15px;
+  width: 100%;
+  height: 300px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 200px;
+  }
+}
+
