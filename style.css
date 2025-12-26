@@ -257,73 +257,62 @@ footer {
   }
 }
 
-/* =====================
-   MOBILE MEDIA QUERY
-===================== */
-@media (max-width: 768px) {
-  .corner-logo {
-    width: 36px;   /* Smaller on phones */
-  }
-}
- {
-  header h1 {
-    font-size: 26px;
-  }
-
-  nav a {
-    font-size: 14px;
-  }
-
-  section {
-    padding: 40px 15px;
-  }
-
-  .sticky-order-btn {
-    display: block;
-  }
-
-  .mascot {
-    display: block;
-  }
-}
-
-@media (max-width: 768px) {
-  .logo-area {
-    flex-direction: column;
-  }
-
-  .logo-area img {
-    width: 60px;
-  }
-}
-/* =====================
-   FORCE CORNER LOGO
-===================== */
-.site-header {
+/* FULLSCREEN HERO */
+.hero-fullscreen {
   position: relative;
-  min-height: 70px;
-  padding-top: 30px;
+  background: url('images/bakery-bg.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
 }
 
-.logo-link {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  z-index: 2000;
-}
-
-.corner-logo {
-  width: 42px;
+.hero-logo {
+  width: 100px;
   height: auto;
-  display: block;
+  margin-bottom: 20px;
 }
 
-/* Mobile size */
+.hero-title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  padding: 14px 30px;
+  background: #f48fb1;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .corner-logo {
-    width: 34px;
+  .hero-logo {
+    width: 70px;
+  }
+  .hero-title {
+    font-size: 32px;
+  }
+  .hero-subtitle {
+    font-size: 16px;
+  }
+  .hero-button {
+    padding: 12px 24px;
+    font-size: 16px;
   }
 }
-
-
-
