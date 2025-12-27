@@ -106,6 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const orderMethod = document.getElementById("orderMethod");
   const addressField = document.getElementById("deliveryAddress");
   const deliveryFee = document.getElementById("deliveryFee");
+  const thankYouPopup = document.getElementById("thankYouPopup");
+  const closePopup = document.getElementById("closePopup");
 
 orderMethod.addEventListener("change", () => {
   if (orderMethod.value.includes("Delivery")) {
