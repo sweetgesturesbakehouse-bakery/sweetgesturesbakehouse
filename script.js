@@ -71,7 +71,7 @@ if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    alert("Thank you! 🧁 Your order has been received.");
+    alert("Thank you! 🧁 We will get back to you.");
 
     // Clear form
     form.reset();
