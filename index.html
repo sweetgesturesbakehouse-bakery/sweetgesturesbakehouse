@@ -84,20 +84,6 @@
   <option value="Local Pickup">Local Pickup</option>
   <option value="Delivery (within 3 miles)">Delivery (within 3 miles)</option>
 </select>
-const orderMethod = document.getElementById("orderMethod");
-const addressField = document.getElementById("deliveryAddress");
-const deliveryFee = document.getElementById("deliveryFee");
-
-orderMethod.addEventListener("change", () => {
-  if (orderMethod.value.includes("Delivery")) {
-    addressField.style.display = "block";
-    deliveryFee.style.display = "block";
-  } else {
-    addressField.style.display = "none";
-    deliveryFee.style.display = "none";
-  }
-});
-
 
 <!-- =====================
    CONTACT SECTION
