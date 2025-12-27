@@ -84,49 +84,62 @@
     <input type="time" name="Pickup Time" required>
 
     <!-- Pickup Method -->
-   <label>Order Method</label>
-   <select name="Order Method" required>
-     <div id="deliveryFee" class="delivery-fee">
-  🚗 Delivery Fee: <strong>$15</strong> (within 3 miles)
-</div>
+    <!-- ORDER METHOD -->
+<label>Order Method</label>
+<select name="Order Method" id="orderMethod" required>
+  <option value="">Select an option</option>
+  <option value="Local Pickup">Local Pickup</option>
+  <option value="Delivery (within 3 miles)">Delivery (within 3 miles)</option>
+</select>
 
-     <div id="deliveryAddress" style="display:none;">
+<!-- DELIVERY ADDRESS (Only for Delivery) -->
+<div id="deliveryAddress" style="display:none;">
+  <label>Delivery Address</label>
   <input
     type="text"
     name="Delivery Address"
-    placeholder="Delivery Address (within 3 miles)"
+    placeholder="Enter delivery address (within 3 miles)"
   >
-       
-<p class="distance-note">
-  📍 Delivery available only within <strong>3 miles of Frisco, TX</strong>.  
-  We’ll confirm eligibility before accepting the order.
-</p>
-
+  <p class="distance-note">
+    📍 Delivery available only within <strong>3 miles of Frisco, TX</strong>
+  </p>
 </div>
-     <option value="">Select an option</option>
-     <option value="Local Pickup">Local Pickup</option>
-     <option value="Delivery (within 3 miles)">Delivery (within 3 miles)</option>
-  </select>
 
-    <label>Order Total ($)</label>
+<!-- DELIVERY FEE DISPLAY -->
+<div id="deliveryFee" class="delivery-fee">
+  🚗 Delivery Fee: <strong>$15</strong>
+</div>
+
+<!-- PRICE INPUT -->
+<label>Order Price ($)</label>
 <input
   type="number"
   id="basePrice"
-  name="Base Price"
+  name="Order Price"
   placeholder="Enter order price"
   required
 >
 
+<!-- TOTAL DISPLAY -->
 <div class="total-box">
-  <p>Subtotal: $<span id="subtotal">0</span></p>
-  <p id="deliveryLine" style="display:none;">Delivery Fee: $15</p>
+  <p>Subtotal: $<span id="subtotal">0.00</span></p>
+  <p id="deliveryLine" style="display:none;">Delivery Fee: $15.00</p>
   <p class="grand-total">
-    Total: $<span id="grandTotal">0</span>
+    Total: $<span id="grandTotal">0.00</span>
   </p>
 </div>
 
+<!-- HIDDEN VALUES FOR EMAIL -->
 <input type="hidden" name="Final Total" id="finalTotalInput">
 <input type="hidden" name="Order ID" id="orderId">
+
+   
+    
+ 
+
+   
+
+    <label>Order Total ($)</l
 
 
     <!-- FormSubmit Settings -->
