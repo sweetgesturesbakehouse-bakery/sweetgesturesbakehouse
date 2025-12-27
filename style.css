@@ -30,6 +30,26 @@ body {
   padding: 20px;
 }
 
+.hero-button {
+  background: #ff4d6d;        /* vibrant pink */
+  color: white;
+  border: none;
+  padding: 15px 40px;         /* more padding makes it bigger */
+  font-size: 18px;             /* bigger text */
+  border-radius: 30px;         /* rounded corners */
+  cursor: pointer;
+  display: inline-block;       /* ensures width adjusts */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 180px;            /* ensures button isn’t too short */
+}
+
+.hero-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+}
+
+
 .hero-fullscreen::after {
   content: "";
   position: absolute;
