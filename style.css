@@ -157,23 +157,38 @@ h1, h2 {
 }
 
 #hero {
-  min-height: 100vh; /* full screen */
+  #hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffdde1, #ffb3c6);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #ffdde1, #ff4d6d);
-  color: white;
   text-align: center;
 }
 
 .hero-content {
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* PUSH BUTTONS DOWN */
   padding: 40px 20px;
 }
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Bakery name */
+#hero h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
+
+.location {
+  font-size: 18px;
+  color: #555;
+}
+
 
 /* BUTTONS AT END */
 .hero-buttons {
