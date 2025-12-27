@@ -60,13 +60,18 @@
 ===================== -->
 <section id="order">
   <h2>Place Your Order</h2>
-  <form>
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Email Address" required>
-    <input type="tel" name="phone" placeholder="Phone Number" required>
-    <textarea name="order-details" placeholder="What would you like to order?" required></textarea>
-    <button type="submit">Submit Order 🧁</button>
-  </form>
+  <form action="https://formsubmit.co/sweetgesturesbakehouse" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Customer Email" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <textarea name="order" placeholder="Order details" required></textarea>
+
+  <!-- Optional settings -->
+  <input type="hidden" name="_subject" value="🧁 New Bakery Order">
+  <input type="hidden" name="_captcha" value="false">
+
+  <button type="submit">Submit Order 🧁</button>
+</form>
 </section>
 
 <!-- =====================
