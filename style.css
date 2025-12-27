@@ -319,4 +319,16 @@ body {
   }
 }
 
+.delivery-fee {
+  display: none;
+  background: #fff3f6;
+  border: 2px dashed #ff4d6d;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  color: #5a1a1a;
+  font-weight: bold;
+  text-align: center;
+}
+
 
