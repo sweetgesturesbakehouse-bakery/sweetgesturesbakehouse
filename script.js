@@ -103,48 +103,18 @@ function closePopup() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const basePriceInput = document.getElementById("basePrice");
-  const subtotalText = document.getElementById("subtotal");
-  const grandTotalText = document.getElementById("grandTotal");
-  const finalTotalInput = document.getElementById("finalTotalInput");
-  const deliveryLine = document.getElementById("deliveryLine");
-  const orderMethod = document.querySelector('select[name="Order Method"]');
-  const orderIdInput = document.getElementById("orderId");
+  const orderMethod = document.getElementById("orderMethod");
+  const addressField = document.getElementById("deliveryAddress");
+  const deliveryFee = document.getElementById("deliveryFee");
 
-  // Generate Order ID
-  const orderId = "BAKE-" + Math.floor(Math.random() * 100000);
-  orderIdInput.value = orderId;
-
-  function calculateTotal() {
-    const base = parseFloat(basePriceInput.value) || 0;
-    let total = base;
-
-    if (orderMethod.value.includes("Delivery")) {
-      total += 15;
-      deliveryLine.style.display = "block";
-    } else {
-      deliveryLine.style.display = "none";
-    }
-
-    subtotalText.textContent = base.toFixed(2);
-    grandTotalText.textContent = total.toFixed(2);
-    finalTotalInput.value = total.toFixed(2);
+orderMethod.addEventListener("change", () => {
+  if (orderMethod.value.includes("Delivery")) {
+    addressField.style.display = "block";
+    deliveryFee.style.display = "block";
+  } else {
+    addressField.style.display = "none";
+    deliveryFee.style.display = "none";
   }
-
-  basePriceInput.addEventListener("input", calculateTotal);
-  orderMethod.addEventListener("change", calculateTotal);
-});
-
-
-  orderMethod.addEventListener("change", () => {
-    if (orderMethod.value.includes("Delivery")) {
-      addressField.style.display = "block";
-      deliveryFee.style.display = "block";
-    } else {
-      addressField.style.display = "none";
-      deliveryFee.style.display = "none";
-    }
-  });
 });
 
 #deliveryAddress input {
