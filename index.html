@@ -3,142 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet Gestures Bakehouse</title>
+  <title>Sweet Gesture Bakehouse</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
 
-<!-- =====================
-   FULLSCREEN HERO
-===================== -->
-<section id="home" class="hero-fullscreen">
-  <img src="logo.png.jpg" alt="Bakery Logo" class="hero-logo">
-  <h1 class="hero-title">Sweet Gestures Bakehouse</h1>
-  <p class="hero-subtitle">Handmade Desserts • Fresh Daily • Made with Love 💖</p>
-  <a href="#order" class="hero-button">Because you need a sweet treat🧁</a>
-/>
-</section>
-
-<!-- =====================
-   MENU SECTION
-===================== -->
-<section id="menu">
-  <h2>Our Menu</h2>
-  <div class="menu-grid">
-    <div class="card">
-      <h3>Cupcakes</h3>
-      <p>Soft and moist with creamy frosting</p>
+  <!-- HERO SECTION -->
+<header id="hero">
+  <div class="hero-content">
+    <div class="logo-name">
+      <img src="images/logo.png" alt="Sweet Gesture Bakehouse Logo" class="logo">
+      <h1>Sweet Gesture Bakehouse</h1>
     </div>
-    <div class="card">
-      <h3>Custom Royal Icing Cookies</h3>
-      <p>Designed for your special occasions</p>
-    </div>
-    <div class="card">
-      <h3>Custom Cakes</h3>
-      <p>Designed for your special occasions</p>
-    </div>
-    <div class="card">
-      <h3>Brown Butter Chocolate Chip Cookies</h3>
-      <p>Crunchy, soft, and homemade</p>
-    </div>
+    <p>Located in Frisco, TX</p>
+    <a href="#contact" class="hero-button">Contact Us 🧁</a>
+    <a href="sweetgesturesbakehouse@gmail.com" class="hero-button email-button">📧 Send Us an Email</a>
   </div>
-</section>
+</header>
 
-<!-- =====================
-   ABOUT SECTION
-===================== -->
-<section id="about">
-  <h2>About Us</h2>
-  <p>
-    At Sweet Gestures Bakehouse, we craft every dessert with love and attention to detail.
-    From cookies to custom cakes, our treats are fresh daily and baked to perfection.
-  </p>
-</section>
+  <!-- GALLERY SECTION -->
+  <section id="gallery">
+    <h2>Our Sweet Creations 🍰</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/cake1.jpg" alt="Chocolate Cake" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/cake2.jpg" alt="Cupcakes" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/cake3.jpg" alt="Cookies" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/cake4.jpg" alt="Birthday Cake" loading="lazy"></div>
+      <!-- Add more images as needed -->
+    </div>
+  </section>
 
-<!-- =====================
-   ORDER SECTION
-===================== -->
-<section id="order">
-  <h2>Tell us what you want🧁</h2>
+  <!-- ORDER / CONTACT SECTION -->
+  <section id="contact">
+    <h2>Place Your Order 🧁</h2>
+    <form id="orderForm" action="https://formsubmit.co/youremail@example.com" method="POST">
 
-  <form
-    action="https://formsubmit.co/sweetgesturesbakehouse.netlify.app"
-    method="POST"
-  >
-    <!-- Customer Info -->
-    <input type="text" name="Name" placeholder="Your Name" required>
-    <input type="email" name="Email" placeholder="Your Email" required>
-    <input type="tel" name="Phone" placeholder="Phone Number" required>
+      <label>Name</label>
+      <input type="text" name="Name" placeholder="Your Name" required>
 
-    <!-- Order Details -->
-    <textarea name="Order Details" placeholder="What would you like to order?" required></textarea>
+      <label>Email</label>
+      <input type="email" name="Email" placeholder="Your Email" required>
 
-    <!-- Pickup Method -->
-    <!-- ORDER METHOD -->
-<label>Order Method</label>
-<select name="Order Method" id="orderMethod" required>
-  <option value="">Select an option</option>
-  <option value="Local Pickup">Local Pickup</option>
-  <option value="Delivery (within 3 miles)">Delivery (within 3 miles)</option>
-</select>
+      <label>Order Method</label>
+      <select name="Order Method" id="orderMethod" required>
+        <option value="">Select an option</option>
+        <option value="Local Pickup">Local Pickup</option>
+        <option value="Delivery (within 3 miles)">Delivery (within 3 miles)</option>
+      </select>
 
-    <a href="mailto:sweetgesturesbakehouse" class="hero-button email-button">
-  📧 Send Us an Email
-</a>
-    
-    <!-- THANK YOU POPUP -->
-<div id="thankYouPopup" style="display:none;">
-  <div class="popup-content">
-    <h3>Thank you! 🎉</h3>
-    <p>We will get back to you shortly.</p>
-    <button id="closePopup">Close</button>
-  </div>
-</div>
+      <div id="deliveryAddress" style="display:none;">
+        <label>Delivery Address</label>
+        <input type="text" name="Delivery Address" placeholder="Enter delivery address">
+        <p>Delivery available only within 3 miles of Frisco, TX</p>
+        <p>Delivery Fee: $15</p>
+      </div>
 
-<!-- =====================
-   CONTACT SECTION
-===================== -->
-<section id="contact">
-  <h2>Contact Us</h2>
-  <p>Email: sweetgesturesbakehouse@gmail.com</p>
-  <p>Phone: (469) 430 5634</p>
-  <p>Follow us on Instagram: @sweetgesturesbakehouse</p>
-  <p>Follow us on Facebook: @sweetgesturesbakehouse</p>
+      <label>Message</label>
+      <textarea name="Message" placeholder="Any special requests?" rows="3"></textarea>
 
-  <!-- Google Map Embed -->
-  <div class="map-container">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13453.123456789!2d-96.823611!3d33.150681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c29b123456789%3A0xabcdef123456789!2sFrisco%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-      width="100%" 
-      height="300" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
+      <button type="submit" class="hero-button">Contant us 🧁</button>
+      <input type="hidden" name="_next" value="thankyou.html">
 
-<!-- =====================
-   STICKY ORDER BUTTON
-===================== -->
-<a href="#order" class="sticky-order-btn">🧁 Order Now</a>
-
-<!-- =====================
-   CUTE MASCOT
-===================== -->
-  <div class="mascot">🐱🧁<span>Freshly baked!</span></div>
+    </form>
+  </section>
 
   <!-- THANK YOU POPUP -->
-<div id="thankYouPopup" class="popup-overlay">
-  <div class="popup-box">
-    <h2>Thank You! 💖</h2>
-    <p>Your order has been sent successfully.</p>
-    <p>We’ll contact you soon to confirm pickup details 🧁</p>
-    <button onclick="closePopup()">Okay 🍰</button>
+  <div id="thankYouPopup" style="display:none;">
+    <div class="popup-content">
+      <h3>Thank you! 🎉</h3>
+      <p>We received your request and will get back to you shortly.</p>
+      <button id="closePopup">Close</button>
+    </div>
   </div>
-</div>
 
+  <script src="script.js"></script>
 </body>
 </html>
+
