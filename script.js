@@ -102,4 +102,39 @@ function closePopup() {
   document.getElementById("thankYouPopup").style.display = "none";
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const orderMethod = document.querySelector('select[name="Order Method"]');
+  const addressField = document.getElementById("deliveryAddress");
+  const deliveryFee = document.getElementById("deliveryFee");
+
+  orderMethod.addEventListener("change", () => {
+    if (orderMethod.value.includes("Delivery")) {
+      addressField.style.display = "block";
+      deliveryFee.style.display = "block";
+    } else {
+      addressField.style.display = "none";
+      deliveryFee.style.display = "none";
+    }
+  });
+});
+
+#deliveryAddress input {
+  margin-top: 10px;
+}
+
+.delivery-fee {
+  display: none;
+  background: #fff3f6;
+  border: 2px dashed #ff4d6d;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 10px;
+  color: #5a1a1a;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
 
