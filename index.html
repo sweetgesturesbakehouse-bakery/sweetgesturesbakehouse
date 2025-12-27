@@ -81,12 +81,21 @@
     <input type="time" name="Pickup Time" required>
 
     <!-- Pickup Method -->
-    <label>Pickup Method</label>
-    <select name="Pickup Method" required>
-      <option value="">Select an option</option>
-      <option value="In-store pickup">In-store Pickup</option>
-      <option value="Curbside pickup">Curbside Pickup</option>
-    </select>
+   <label>Order Method</label>
+   <select name="Order Method" required>
+     <div id="deliveryAddress" style="display:none;">
+  <input
+    type="text"
+    name="Delivery Address"
+    placeholder="Delivery Address (within 3 miles)"
+  >
+</div>
+     <option value="">Select an option</option>
+     <option value="Local Pickup">Local Pickup</option>
+     <option value="Delivery (within 3 miles)">Delivery (within 3 miles)</option>
+  </select>
+
+
 
     <!-- FormSubmit Settings -->
     <input type="hidden" name="_subject" value="🧁 New Bakery Order">
