@@ -167,6 +167,21 @@ orderForm.addEventListener("submit", function(e) {
   text-align: center;
 }
 
+const form = document.getElementById("orderForm");
+const popup = document.getElementById("thankYouPopup");
+
+form.addEventListener("submit", () => {
+  setTimeout(() => {
+    popup.style.display = "flex";
+    form.reset();
+  }, 500);
+});
+
+function closePopup() {
+  popup.style.display = "none";
+}
+
+
 
 
 
