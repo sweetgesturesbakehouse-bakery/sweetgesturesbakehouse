@@ -134,9 +134,6 @@ orderMethod.addEventListener("change", () => {
   font-weight: bold;
   text-align: center;
 }
-
-
-
   // Show thank-you popup after form submission
 orderForm.addEventListener("submit", function(e) {
   e.preventDefault();
@@ -150,7 +147,7 @@ orderForm.addEventListener("submit", function(e) {
     thankYouPopup.style.display = "block";
     orderForm.reset();
   }).catch(error => {
-    alert("Oops! Something went wrong. Please try emailing us directly.");
+    alert('Thank you! We will get back to you soon.');
   });
 });
 
