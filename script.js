@@ -18,21 +18,6 @@ function orderNow() {
   }
 }
 
-/* ============================
-   MASCOT INTERACTION
-============================ */
-const mascot = document.querySelector(".mascot");
-
-if (mascot) {
-  mascot.addEventListener("click", () => {
-    mascot.innerHTML = "🐱🍰<span>Let’s bake!</span>";
-  });
-
-  // Auto hide mascot after some time
-  setTimeout(() => {
-    mascot.style.display = "none";
-  }, 15000);
-}
 
 /* ============================
    ORDER FORM HANDLING
