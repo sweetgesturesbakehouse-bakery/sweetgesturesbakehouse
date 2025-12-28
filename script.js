@@ -1,101 +1,88 @@
-// Smooth scrolling for all links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e){
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("JS LOADED");
+
+  /* ============================
+     SMOOTH SCROLL
+  ============================ */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute("href"))
+        ?.scrollIntoView({ behavior: "smooth" });
     });
   });
-});
 
-/* ============================
-   HERO BUTTON SCROLL
-============================ */
-function orderNow() {
-  const orderSection = document.getElementById("order");
-  if (orderSection) {
-    orderSection.scrollIntoView({ behavior: "smooth" });
+  /* ============================
+     DELIVERY ADDRESS TOGGLE
+  ============================ */
+  const orderMethod = document.getElementById("orderMethod");
+  const deliveryAddress = document.getElementById("deliveryAddress");
+
+  if (orderMethod && deliveryAddress) {
+    orderMethod.addEventListener("change", () => {
+      deliveryAddress.style.display =
+        orderMethod.value.includes("Delivery") ? "block" : "none";
+    });
   }
-}
 
-/* ============================
-   PREVENT DOUBLE TAP ZOOM (iOS)
-============================ */
-let lastTouchEnd = 0;
-document.addEventListener(
-  "touchend",
-  function (event) {
-    const now = new Date().getTime();
-    if (now - lastTouchEnd <= 300) {
-      event.preventDefault();
-    }
-    lastTouchEnd = now;
-  },
-  false
-);
+  /* ============================
+     FORM + THANK YOU POPUP
+  ============================ */
+  const form = document.getElementById("orderForm");
+  const popup = document.getElementById("thankYouPopup");
+  const closeBtn = document.getElementById("closePopup");
 
-  // DELIVERY ADDRESS TOGGLE
-const orderMethod = document.getElementById("orderMethod");
-const deliveryAddress = document.getElementById("deliveryAddress");
+  if (form && popup && closeBtn) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // STOP redirect
 
-if (orderMethod) {
-  orderMethod.addEventListener("change", () => {
-    deliveryAddress.style.display =
-      orderMethod.value.includes("Delivery") ? "block" : "none";
-  });
-}
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" }
+      })
+      .then(() => {
+        popup.style.display = "flex";
+        form.reset();
+      })
+      .catch(() => {
+        alert("Something went wrong. Please try again.");
+      });
+    });
 
-console.log("JS LOADED");
+    closeBtn.addEventListener("click", () => {
+      popup.style.display = "none";
+    });
+  }
 
-const form = document.getElementById("orderForm");
-const popup = document.getElementById("thankYouPopup");
-const closeBtn = document.getElementById("closePopup");
+  /* ============================
+     GALLERY LIGHTBOX
+  ============================ */
+  const images = document.querySelectorAll(".gallery-grid img");
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightboxImg");
+  const closeLightbox = document.getElementById("closeLightbox");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // STOP redirect
+  if (lightbox && lightboxImg && closeLightbox) {
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
 
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: {
-      "Accept": "application/json"
-    }
-  }).then(() => {
-    popup.style.display = "flex";
-    form.reset();
-  }).catch(() => {
-    alert("Something went wrong. Please try again.");
-  });
-});
+    closeLightbox.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
 
-closeBtn.addEventListener("click", () => {
-  popup.style.display = "none";
-});
-
-
-
-// ================= GALLERY LIGHTBOX =================
-const images = document.querySelectorAll(".gallery-grid img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightboxImg");
-const closeLightbox = document.getElementById("closeLightbox");
-
-images.forEach(img => {
-  img.addEventListener("click", () => {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-  });
-});
-
-closeLightbox.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
-
-lightbox.addEventListener("click", e => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
+    lightbox.addEventListener("click", e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+      }
+    });
   }
 });
+
 
 
 
