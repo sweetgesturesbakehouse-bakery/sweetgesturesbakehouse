@@ -1,118 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet Gesture Bakehouse</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sweet Gestures Bakehouse</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- HERO SECTION -->
-  <section class="hero-fullscreen">
-    <img src="./logo.png.jpg" alt="Bakery Logo" class="hero-logo">
-    <h1 class="hero-title">Sweet Gesture Bakehouse</h1>
-    <p class="hero-subtitle">Handmade Desserts • Fresh Daily • Made with Love 💖</p>
-  </section>
+<!-- ================= HERO ================= -->
+<section class="hero-fullscreen">
+  <img src="logo.png.jpg" alt="Sweet Gestures Bakehouse Logo" class="hero-logo">
+  <h1 class="hero-title">Sweet Gestures Bakehouse</h1>
+  <p class="hero-subtitle">Handmade Desserts • Fresh Daily • Made with Love 💖</p>
+</section>
 
-  <!-- ===================== MENU ===================== -->
-  <section id="menu">
-    <h2>Our Menu</h2>
-    <div class="menu-grid">
-      <div class="card">
-        <h3>Cupcakes</h3>
-        <p>Custom cupcakes with creamy frosting</p>
-      </div>
-      <div class="card">
-        <h3>Royal Icing Cookies</h3>
-        <p>Designed for your special occasions</p>
-      </div>
-      <div class="card">
-        <h3>Custom Cakes</h3>
-        <p>Designed for your special occasions</p>
-      </div>
-      <div class="card">
-        <h3>Brown Butter Chocolate Chip Cookies</h3>
-        <p>Delicious, soft bites, homemade with love</p>
-      </div>
+<!-- ================= FLOATING CUPCAKES ================= -->
+<div class="floating-cupcake">🧁</div>
+<div class="floating-cupcake delay1">🧁</div>
+<div class="floating-cupcake delay2">🧁</div>
+
+<!-- ================= MENU ================= -->
+<section id="menu">
+  <h2>Our Menu</h2>
+  <div class="menu-grid">
+    <div class="card">
+      <h3>Cupcakes</h3>
+      <p>Custom cupcakes with creamy frosting</p>
     </div>
-  </section>
-
-  <!-- ===================== GALLERY ===================== -->
-  <section id="gallery">
-    <h2>Our Sweet Creations 🍰</h2>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="./Cakess.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake7.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 9.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 6.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 5.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 4.jpg.jpeg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 3.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 2.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 13.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 12.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 11.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
-      <div class="gallery-item"><img src="./cake 10.jpg.jpg" alt="Custom Orders" loading="lazy"></div>
+    <div class="card">
+      <h3>Royal Icing Cookies</h3>
+      <p>Perfect for special occasions</p>
     </div>
-  </section>
-
-  <!-- ===================== ORDER FORM ===================== -->
-  <section id="contact">
-    <h2>Tell us what you want 🧁</h2>
-    <form id="orderForm" action="https://formsubmit.co/sweetgesturesbakehouse@gmail.com" method="POST">
-
-      <label>Name</label>
-      <input type="text" name="Name" placeholder="Your Name" required>
-
-      <label>Email</label>
-      <input type="email" name="Email" placeholder="Your Email" required>
-
-      <label>Pickup/Delivery Options</label>
-      <select name="Order Method" id="orderMethod" required>
-        <option value="">Select an option</option>
-        <option value="Local Pickup">Local Pickup</option>
-        <option value="Delivery (within 3 miles)">Delivery (within 3 miles)</option>
-      </select>
-
-      <div id="deliveryAddress" style="display:none;">
-        <label>Delivery Address</label>
-        <input type="text" name="Delivery Address" placeholder="Enter delivery address">
-        <p>Delivery available only within 3 miles of Frisco, TX</p>
-        <p>Delivery Fee: $15</p>
-      </div>
-
-      <label>Message</label>
-      <textarea name="Message" placeholder="Any special requests?" rows="3"></textarea>
-
-      <button type="submit" class="hero-button">Send an Email 🧁</button>
-
-    </form>
-  </section>
-
-  <!-- ===================== CONTACT / FOLLOW ===================== -->
-  <div class="contact-buttons">
-    <a href="mailto:sweetgesturesbakehouse@gmail.com" class="contact-btn">📧 Email Us</a>
-    <a href="https://www.instagram.com/sweetgesturesbakehouse" target="_blank" class="contact-btn">Instagram</a>
-    <a href="https://www.facebook.com/sweetgesturesbakehouse" target="_blank" class="contact-btn">Facebook</a>
+    <div class="card">
+      <h3>Custom Cakes</h3>
+      <p>Designed just for you</p>
+    </div>
+    <div class="card">
+      <h3>Brown Butter Cookies</h3>
+      <p>Soft, chewy & homemade</p>
+    </div>
   </div>
+</section>
 
-  <!-- ===================== MAP ===================== -->
-  <section id="map-section">
-    <h2>Find Us</h2>
-    <div class="map-container">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13453.123456789!2d-96.823611!3d33.150681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c29b123456789%3A0xabcdef123456789!2sFrisco%2C%20TX!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
-        width="100%" 
-        height="350" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
-    </div>
-  </section>
+<!-- ================= ORDER FORM ================= -->
+<section id="contact">
+  <h2>Tell Us What You Want 🧁</h2>
 
-  <script src="./script.js"></script>
+  <form id="orderForm" action="https://formsubmit.co/sweetgesturesbakehouse@gmail.com" method="POST">
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Message" placeholder="Your order details..." rows="4"></textarea>
+
+    <button type="submit">Send Message</button>
+    <input type="hidden" name="_captcha" value="false">
+  </form>
+</section>
+
+<!-- ================= THANK YOU POPUP ================= -->
+<div id="thankYouPopup" class="thank-you-popup">
+  <div class="popup-box">
+    <h3>Thank you! 🎉</h3>
+    <p>We received your message and will get back to you soon.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<!-- ================= SOCIAL ================= -->
+<section class="social-section">
+  <p>Follow us 💕</p>
+  <div class="social-icons">
+    <a href="https://www.instagram.com/sweetgesturesbakehouse" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/sweetgesturesbakehouse" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+    </a>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section id="map-section">
+  <h2>Find Us</h2>
+  <iframe
+    src="https://www.google.com/maps?q=Frisco,TX&output=embed"
+    loading="lazy">
+  </iframe>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
+
