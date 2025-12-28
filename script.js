@@ -66,93 +66,55 @@ document.addEventListener(
   false
 );
 
-function showThankYouPopup() {
-  document.getElementById("thankYouPopup").style.display = "flex";
-}
+  // DELIVERY ADDRESS TOGGLE
+const orderMethod = document.getElementById("orderMethod");
+const deliveryAddress = document.getElementById("deliveryAddress");
 
-function closePopup() {
-  document.getElementById("thankYouPopup").style.display = "none";
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  const orderMethod = document.getElementById("orderMethod");
-  const addressField = document.getElementById("deliveryAddress");
-  const deliveryFee = document.getElementById("deliveryFee");
-  const thankYouPopup = document.getElementById("thankYouPopup");
-  const closePopup = document.getElementById("closePopup");
-
-orderMethod.addEventListener("change", () => {
-  if (orderMethod.value.includes("Delivery")) {
-    addressField.style.display = "block";
-    deliveryFee.style.display = "block";
-  } else {
-    addressField.style.display = "none";
-    deliveryFee.style.display = "none";
-  }
-});
-
-  #deliveryAddress input {
-  margin-top: 10px;
-}
-
-.delivery-fee {
-  display: none;
-  background: #fff3f6;
-  border: 2px dashed #ff4d6d;
-  padding: 12px;
-  border-radius: 12px;
-  margin-top: 10px;
-  color: #5a1a1a;
-  font-weight: bold;
-  text-align: center;
-}
-  // Show thank-you popup after form submission
-document.getElementById("thankYouPopup")
-  const formData = new FormData(orderForm);
-    thankYouPopup.style.display = "block";
-    orderForm.reset();
-  }).catch(error => {
-    alert('Thank you! We will get back to you soon.');
-  });
-});
-
-#deliveryAddress input {
-  margin-top: 10px;
-}
-
-.delivery-fee {
-  display: none;
-  background: #fff3f6;
-  border: 2px dashed #ff4d6d;
-  padding: 12px;
-  border-radius: 12px;
-  margin-top: 10px;
-  color: #5a1a1a;
-  font-weight: bold;
-  text-align: center;
-}
-
-function handleSubmit(e) {
-  e.preventDefault(); // STOP page redirect
-
-  const form = e.target;
-  const popup = document.getElementById("thankYouPopup");
-
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(() => {
-    popup.style.display = "flex";
-    form.reset();
-  }).catch(() => {
-    alert("Something went wrong. Please try again.");
+if (orderMethod) {
+  orderMethod.addEventListener("change", () => {
+    deliveryAddress.style.display =
+      orderMethod.value.includes("Delivery") ? "block" : "none";
   });
 }
 
-function closePopup() {
-  document.getElementById("thankYouPopup").style.display = "none";
+// FORM SUBMIT + THANK YOU POPUP
+const form = document.getElementById("orderForm");
+const popup = document.getElementById("thankYouPopup");
+const closeBtn = document.getElementById("closePopup");
+
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // ⛔ STOP REDIRECT
+
+    fetch("https://formsubmit.co/ajax/sweetgesturesbakehouse@gmail.com", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: form.querySelector('[name="Name"]').value,
+        email: form.querySelector('[name="Email"]').value,
+        method: orderMethod.value,
+        address: form.querySelector('[name="Delivery Address"]')?.value || "",
+        message: form.querySelector('[name="Message"]').value,
+      }),
+    }).then(() => {
+      popup.style.display = "flex"; // ✅ SHOW POPUP
+      form.reset();
+      deliveryAddress.style.display = "none";
+    });
+  });
 }
+
+// CLOSE POPUP
+if (closeBtn) {
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+}
+
+
 
 // ================= GALLERY LIGHTBOX =================
 const images = document.querySelectorAll(".gallery-grid img");
