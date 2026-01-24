@@ -55,33 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  <script>
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const closeBtn = document.getElementById("closeLightbox");
-
-  function openLightbox(img) {
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-    document.body.style.overflow = "hidden"; // stop background scroll
-  }
-
-  function closeLightbox() {
-    lightbox.style.display = "none";
-    document.body.style.overflow = ""; // restore scroll
-  }
-
-  closeBtn.addEventListener("click", closeLightbox);
-
-  // Tap outside image closes lightbox (mobile friendly)
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      closeLightbox();
-    }
-  });
-</script>
-
-
   /* ============================
      GALLERY LIGHTBOX
   ============================ */
