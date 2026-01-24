@@ -62,6 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxImg = document.getElementById("lightboxImg");
   const closeLightbox = document.getElementById("closeLightbox");
   const images = document.querySelectorAll(".gallery-grid img");
+  const images = document.querySelectorAll(".menu-grid img");
+
 
   if (lightbox && lightboxImg && closeLightbox) {
     images.forEach(img => {
