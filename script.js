@@ -55,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("JS LOADED");
-
   /* ============================
      LIGHTBOX FOR MENU + GALLERY
   ============================ */
@@ -65,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxImg = document.getElementById("lightboxImg");
   const closeLightbox = document.getElementById("closeLightbox");
 
-  // SELECT ALL IMAGES FOR LIGHTBOX
   const images = document.querySelectorAll(".menu-grid img, .gallery-grid img");
 
   if (lightbox && lightboxImg && closeLightbox) {
