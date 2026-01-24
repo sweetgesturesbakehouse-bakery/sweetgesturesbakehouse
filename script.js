@@ -55,30 +55,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("JS LOADED");
+
   /* ============================
-     GALLERY LIGHTBOX (FINAL)
+     LIGHTBOX FOR MENU + GALLERY
   ============================ */
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightboxImg");
   const closeLightbox = document.getElementById("closeLightbox");
-  const images = document.querySelectorAll(".gallery-grid img");
-  const images = document.querySelectorAll(".menu-grid img");
 
+  // SELECT ALL IMAGES FOR LIGHTBOX
+  const images = document.querySelectorAll(".menu-grid img, .gallery-grid img");
 
   if (lightbox && lightboxImg && closeLightbox) {
     images.forEach(img => {
       img.addEventListener("click", () => {
         lightbox.style.display = "flex";
         lightboxImg.src = img.src;
-        document.body.style.overflow = "hidden";
+        document.body.style.overflow = "hidden"; // stop background scroll
       });
     });
 
     closeLightbox.addEventListener("click", () => {
       lightbox.style.display = "none";
-      document.body.style.overflow = "";
+      document.body.style.overflow = ""; // restore scroll
     });
 
+    // Click outside image closes lightbox
     lightbox.addEventListener("click", e => {
       if (e.target === lightbox) {
         lightbox.style.display = "none";
