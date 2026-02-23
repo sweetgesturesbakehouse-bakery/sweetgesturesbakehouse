@@ -57,89 +57,83 @@ body {
 }
 
 /* ================= RAMADAN LUXE SECTION ================= */
-/* ================= RAMADAN SECTION CLEAN ================= */
-.ramadan-section {
-  position: relative;
-  padding: 120px 20px 80px 20px; /* enough space for title and cards */
-  text-align: center;
-  background: linear-gradient(135deg, #0f1b2e, #1c2e4a); /* deep elegant gradient */
+.ramadan-eid-menu {
+  padding: 80px 20px;        /* generous padding to prevent overlap */
+  background: linear-gradient(135deg, #0f1b2e, #1c2e4a);
   color: white;
+  text-align: center;
   overflow: hidden;
-  min-height: auto; /* no forced height */
 }
 
-/* Section Title */
-.ramadan-section h2 {
+.ramadan-eid-menu h2 {
   font-size: 2.5rem;
+  margin-bottom: 10px;
   color: #f5d77a;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
 }
 
-.ramadan-section .subtitle {
-  font-size: 1.1rem;
+.ramadan-eid-menu .subtitle {
+  font-size: 1.2rem;
   margin-bottom: 50px;
   color: #f8e9b0;
 }
 
-/* Menu Grid */
-.ramadan-section .menu-grid {
+.ramadan-eid-menu .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* Elegant Cards */
-.ramadan-section .menu-item {
+.ramadan-eid-menu .menu-item {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 215, 0, 0.2);
+  border: 1px solid rgba(255, 215, 0, 0.3);
   padding: 20px;
   border-radius: 18px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ramadan-section .menu-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+.ramadan-eid-menu .menu-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
 }
 
-/* Card Images */
-.ramadan-section .menu-item img {
+.ramadan-eid-menu .menu-item img {
   width: 100%;
   border-radius: 15px;
   margin-bottom: 15px;
 }
 
-/* Product Name */
-.ramadan-section .menu-item h3 {
+.ramadan-eid-menu .menu-item h3 {
   color: #f5d77a;
   margin-bottom: 10px;
 }
 
-/* Price */
-.ramadan-section .menu-item span {
+.ramadan-eid-menu .menu-item span {
   display: block;
   margin-top: 10px;
   font-weight: bold;
   color: #ffd700;
 }
 
-/* Mobile adjustments */
+/* Mobile responsive */
 @media (max-width: 768px) {
-  .ramadan-section h2 {
+  .ramadan-eid-menu {
+    padding: 60px 15px;
+  }
+
+  .ramadan-eid-menu h2 {
     font-size: 2rem;
   }
 
-  .ramadan-section .subtitle {
+  .ramadan-eid-menu .subtitle {
     font-size: 1rem;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
 
-  .ramadan-section .menu-grid {
-    gap: 15px;
+  .ramadan-eid-menu .menu-grid {
+    gap: 20px;
   }
 }
 
