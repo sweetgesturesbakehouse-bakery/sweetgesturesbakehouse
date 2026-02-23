@@ -59,40 +59,39 @@ body {
 /* ================= RAMADAN LUXE SECTION ================= */
 .ramadan-section {
   position: relative;
-  padding: 60px 20px 100px 20px; /* top, sides, bottom */
+  padding: 100px 20px 80px 20px; /* top, sides, bottom */
   text-align: center;
   background: linear-gradient(135deg, #0f1b2e, #1c2e4a);
   color: white;
   overflow: hidden;
+  min-height: 600px; /* ensures section is tall enough for moon */
 }
 
 /* Soft glowing moon behind content */
-.ramadan-section::before {
-  content: "";
+.ramadan-section .moon {
   position: absolute;
-  top: 5%;
-  right: 5%;
-  width: 10vw;       /* responsive size */
-  height: 10vw;
+  top: 50px;
+  right: 50px;
+  width: 200px;
+  height: 200px;
   background: radial-gradient(circle, #fff8dc 40%, rgba(255,255,255,0.2) 60%, transparent 70%);
   border-radius: 50%;
-  filter: blur(8px);
-  opacity: 0.8;
+  filter: blur(10px);
+  opacity: 0.7;
+  z-index: 0; /* behind everything */
   animation: moonGlow 4s ease-in-out infinite alternate;
-  z-index: 0;         /* behind cards */
 }
 
 /* Crescent overlay */
-.ramadan-section::after {
-  content: "";
+.ramadan-section .crescent {
   position: absolute;
-  top: 6%;
-  right: 6%;
-  width: 8vw;
-  height: 8vw;
+  top: 65px;
+  right: 65px;
+  width: 160px;
+  height: 160px;
   background: #0f1b2e;
   border-radius: 50%;
-  z-index: 0;        /* behind cards */
+  z-index: 0; /* behind content */
 }
 
 /* Moon animation */
@@ -105,29 +104,29 @@ body {
 .ramadan-section h2 {
   font-size: 2.5rem;
   color: #f5d77a;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   letter-spacing: 1px;
   position: relative;
-  z-index: 1;        /* above moon */
+  z-index: 1; /* above moon */
 }
 
 .ramadan-section .subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 40px;
+  font-size: 1.2rem;
+  margin-bottom: 60px;
   color: #f8e9b0;
   position: relative;
-  z-index: 1;        /* above moon */
+  z-index: 1; /* above moon */
 }
 
 /* Menu Grid */
 .ramadan-section .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;        /* above moon */
+  z-index: 1; /* above moon */
 }
 
 /* Elegant Cards */
@@ -169,15 +168,15 @@ body {
 /* ================= MOBILE ADJUSTMENTS ================= */
 @media (max-width: 768px) {
   .ramadan-section {
-    padding: 50px 15px 80px 15px;
+    padding: 60px 15px 80px 15px;
   }
 
-  .ramadan-section::before,
-  .ramadan-section::after {
-    top: 3%;
-    right: 3%;
-    width: 15vw;
-    height: 15vw;
+  .ramadan-section .moon,
+  .ramadan-section .crescent {
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
   }
 
   .ramadan-section h2 {
@@ -186,7 +185,7 @@ body {
 
   .ramadan-section .subtitle {
     font-size: 1rem;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
 
   .ramadan-section .menu-grid {
