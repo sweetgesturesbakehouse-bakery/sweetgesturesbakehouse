@@ -59,26 +59,27 @@ body {
 /* ================= RAMADAN LUXE SECTION ================= */
 .ramadan-section {
   position: relative;
-  padding: 60px 20px;
+  padding: 60px 20px 100px 20px; /* top, sides, bottom */
   text-align: center;
   background: linear-gradient(135deg, #0f1b2e, #1c2e4a);
   color: white;
   overflow: hidden;
 }
 
-/* Soft glowing moon */
+/* Soft glowing moon behind content */
 .ramadan-section::before {
   content: "";
   position: absolute;
   top: 5%;
   right: 5%;
-  width: 10vw;       /* relative to screen */
+  width: 10vw;       /* responsive size */
   height: 10vw;
   background: radial-gradient(circle, #fff8dc 40%, rgba(255,255,255,0.2) 60%, transparent 70%);
   border-radius: 50%;
   filter: blur(8px);
   opacity: 0.8;
   animation: moonGlow 4s ease-in-out infinite alternate;
+  z-index: 0;         /* behind cards */
 }
 
 /* Crescent overlay */
@@ -91,7 +92,7 @@ body {
   height: 8vw;
   background: #0f1b2e;
   border-radius: 50%;
-  z-index: 0;  /* behind content */
+  z-index: 0;        /* behind cards */
 }
 
 /* Moon animation */
@@ -100,69 +101,97 @@ body {
   to { opacity: 1; }
 }
 
-/* Section title */
+/* Title styling */
 .ramadan-section h2 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #f5d77a;
   margin-bottom: 10px;
   letter-spacing: 1px;
+  position: relative;
+  z-index: 1;        /* above moon */
 }
 
 .ramadan-section .subtitle {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 40px;
   color: #f8e9b0;
+  position: relative;
+  z-index: 1;        /* above moon */
 }
 
 /* Menu Grid */
 .ramadan-section .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
   max-width: 1000px;
-  margin: 60px auto 0 auto;  /* 60px top margin below moon */
-  position: relative;        /* stay above pseudo elements */
-  z-index: 1;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;        /* above moon */
 }
 
 /* Elegant Cards */
 .ramadan-section .menu-item {
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 215, 0, 0.3);
-  padding: 15px;
+  padding: 20px;
   border-radius: 18px;
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ramadan-section .menu-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
 }
 
-/* Card images */
+/* Images */
 .ramadan-section .menu-item img {
   width: 100%;
   border-radius: 15px;
-  margin-bottom: 10px;
-  height: auto;
-  max-height: 160px;
-  object-fit: cover;
+  margin-bottom: 15px;
 }
 
 /* Product Name */
 .ramadan-section .menu-item h3 {
   color: #f5d77a;
-  margin-bottom: 5px;
-  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
 /* Price */
 .ramadan-section .menu-item span {
   display: block;
-  margin-top: 5px;
+  margin-top: 10px;
   font-weight: bold;
   color: #ffd700;
+}
+
+/* ================= MOBILE ADJUSTMENTS ================= */
+@media (max-width: 768px) {
+  .ramadan-section {
+    padding: 50px 15px 80px 15px;
+  }
+
+  .ramadan-section::before,
+  .ramadan-section::after {
+    top: 3%;
+    right: 3%;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .ramadan-section h2 {
+    font-size: 2rem;
+  }
+
+  .ramadan-section .subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .ramadan-section .menu-grid {
+    gap: 15px;
+  }
 }
 
 /* ================= MENU ================= */
