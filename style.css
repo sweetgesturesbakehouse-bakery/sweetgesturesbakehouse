@@ -59,19 +59,20 @@ body {
 /* ================= RAMADAN LUXE SECTION ================= */
 .ramadan-section {
   position: relative;
-  padding: 150px 20px 80px 20px; /* give plenty of top padding for moon */
+  padding: 200px 20px 100px 20px; /* extra top padding for moon */
   text-align: center;
   background: linear-gradient(135deg, #0f1b2e, #1c2e4a);
   color: white;
   overflow: hidden;
-  min-height: 700px; /* ensures section is tall enough for moon + content */
+  min-height: 750px; /* ensures section is tall enough */
 }
 
+/* Background wrapper for moon/crescent */
 .ramadan-background {
   position: absolute;
   inset: 0; /* cover entire section */
-  z-index: 0; /* behind everything */
-  pointer-events: none; /* clicks go through */
+  z-index: 0; /* behind all content */
+  pointer-events: none; /* clicks pass through */
 }
 
 /* Moon */
@@ -160,7 +161,7 @@ body {
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .ramadan-section {
-    padding: 120px 15px 60px 15px;
+    padding: 150px 15px 60px 15px;
   }
 
   .ramadan-background .moon,
@@ -172,11 +173,11 @@ body {
   }
 
   .ramadan-section h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .ramadan-section .subtitle {
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin-bottom: 40px;
   }
 
