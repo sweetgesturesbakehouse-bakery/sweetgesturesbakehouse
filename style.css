@@ -59,16 +59,23 @@ body {
 /* ================= RAMADAN LUXE SECTION ================= */
 .ramadan-section {
   position: relative;
-  padding: 100px 20px 80px 20px; /* top, sides, bottom */
+  padding: 150px 20px 80px 20px; /* give plenty of top padding for moon */
   text-align: center;
   background: linear-gradient(135deg, #0f1b2e, #1c2e4a);
   color: white;
   overflow: hidden;
-  min-height: 600px; /* ensures section is tall enough for moon */
+  min-height: 700px; /* ensures section is tall enough for moon + content */
 }
 
-/* Soft glowing moon behind content */
-.ramadan-section .moon {
+.ramadan-background {
+  position: absolute;
+  inset: 0; /* cover entire section */
+  z-index: 0; /* behind everything */
+  pointer-events: none; /* clicks go through */
+}
+
+/* Moon */
+.ramadan-background .moon {
   position: absolute;
   top: 50px;
   right: 50px;
@@ -78,12 +85,11 @@ body {
   border-radius: 50%;
   filter: blur(10px);
   opacity: 0.7;
-  z-index: 0; /* behind everything */
   animation: moonGlow 4s ease-in-out infinite alternate;
 }
 
-/* Crescent overlay */
-.ramadan-section .crescent {
+/* Crescent */
+.ramadan-background .crescent {
   position: absolute;
   top: 65px;
   right: 65px;
@@ -91,45 +97,31 @@ body {
   height: 160px;
   background: #0f1b2e;
   border-radius: 50%;
-  z-index: 0; /* behind content */
 }
 
-/* Moon animation */
+/* Content above background */
+.ramadan-section h2,
+.ramadan-section .subtitle,
+.ramadan-section .menu-grid {
+  position: relative;
+  z-index: 1;
+}
+
 @keyframes moonGlow {
   from { opacity: 0.7; }
   to { opacity: 1; }
 }
 
-/* Title styling */
-.ramadan-section h2 {
-  font-size: 2.5rem;
-  color: #f5d77a;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  position: relative;
-  z-index: 1; /* above moon */
-}
-
-.ramadan-section .subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 60px;
-  color: #f8e9b0;
-  position: relative;
-  z-index: 1; /* above moon */
-}
-
 /* Menu Grid */
 .ramadan-section .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 30px;
   max-width: 1000px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1; /* above moon */
 }
 
-/* Elegant Cards */
+/* Cards */
 .ramadan-section .menu-item {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -165,14 +157,14 @@ body {
   color: #ffd700;
 }
 
-/* ================= MOBILE ADJUSTMENTS ================= */
+/* Mobile adjustments */
 @media (max-width: 768px) {
   .ramadan-section {
-    padding: 60px 15px 80px 15px;
+    padding: 120px 15px 60px 15px;
   }
 
-  .ramadan-section .moon,
-  .ramadan-section .crescent {
+  .ramadan-background .moon,
+  .ramadan-background .crescent {
     top: 20px;
     right: 20px;
     width: 120px;
