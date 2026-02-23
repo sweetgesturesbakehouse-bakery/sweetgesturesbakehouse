@@ -52,18 +52,18 @@ body {
   100% { transform: translateY(-110vh); opacity: 0; }
 }
 
-.valentine-menu {
+.ramadan-menu {
   padding: 60px 20px;
   background: #fff0f5;
   text-align: center;
 }
 
-.valentine-menu h2 {
+.ramadan-menu h2 {
   font-size: 2.5rem;
   color: #d6336c;
 }
 
-.valentine-menu .subtitle {
+.ramadan-menu .subtitle {
   color: #555;
   margin-bottom: 40px;
 }
