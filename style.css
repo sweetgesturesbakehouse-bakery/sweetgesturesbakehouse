@@ -1,17 +1,18 @@
+/* ================= GLOBAL RESET ================= */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* GENERAL */
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
   background: #fff0f5;
   color: #4a1c1c;
   text-align: center;
 }
 
-/* HERO */
+/* ================= HERO SECTION ================= */
 .hero-fullscreen {
   height: 100vh;
   background: linear-gradient(135deg, #ffdde1, #ff4d6d);
@@ -33,18 +34,17 @@ body {
 }
 
 .hero-subtitle {
-  color: white;
   font-size: 18px;
+  color: white;
 }
 
-/* FLOATING CUPCAKES */
+/* ================= FLOATING CUPCAKES ================= */
 .floating-cupcake {
   position: fixed;
   bottom: -40px;
   font-size: 30px;
-  animation: floatUp 8s infinite;
-  left: 10%;
   opacity: 0.7;
+  animation: floatUp 8s infinite;
 }
 
 .delay1 { left: 50%; animation-delay: 2s; }
@@ -57,11 +57,9 @@ body {
 }
 
 /* ================= RAMADAN LUXE SECTION ================= */
-
 .ramadan-section {
   position: relative;
-  padding: 100px 20px;
-  text-align: center;
+  padding: 60px 20px;
   background: linear-gradient(135deg, #0f1b2e, #1c2e4a);
   color: white;
   overflow: hidden;
@@ -71,10 +69,10 @@ body {
 .ramadan-section::before {
   content: "";
   position: absolute;
-  top: 60px;
-  right: 80px;
-  width: 180px;
-  height: 180px;
+  top: 30px;
+  right: 20px;
+  width: 120px;
+  height: 120px;
   background: radial-gradient(circle, #fff8dc 40%, rgba(255,255,255,0.2) 60%, transparent 70%);
   border-radius: 50%;
   filter: blur(8px);
@@ -86,10 +84,10 @@ body {
 .ramadan-section::after {
   content: "";
   position: absolute;
-  top: 75px;
-  right: 100px;
-  width: 150px;
-  height: 150px;
+  top: 40px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
   background: #0f1b2e;
   border-radius: 50%;
 }
@@ -100,25 +98,27 @@ body {
   to { opacity: 1; }
 }
 
-/* Title styling */
+/* Section title */
 .ramadan-section h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #f5d77a;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
 .ramadan-section .subtitle {
-  font-size: 1.1rem;
-  margin-bottom: 60px;
+  font-size: 1rem;
+  margin-bottom: 40px;
   color: #f8e9b0;
 }
 
 /* Menu Grid */
 .ramadan-section .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 /* Elegant Cards */
@@ -126,56 +126,49 @@ body {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 215, 0, 0.3);
-  padding: 20px;
+  padding: 15px;
   border-radius: 18px;
   transition: 0.3s ease;
 }
 
 .ramadan-section .menu-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
-/* Images */
+/* Card images */
 .ramadan-section .menu-item img {
   width: 100%;
   border-radius: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  height: auto;
+  max-height: 160px;
+  object-fit: cover;
 }
 
 /* Product Name */
 .ramadan-section .menu-item h3 {
   color: #f5d77a;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
 }
 
 /* Price */
 .ramadan-section .menu-item span {
   display: block;
-  margin-top: 10px;
+  margin-top: 5px;
   font-weight: bold;
   color: #ffd700;
 }
 
-/* Mobile moon adjustment */
-@media (max-width: 768px) {
-  .ramadan-section::before,
-  .ramadan-section::after {
-    top: 30px;
-    right: 20px;
-    width: 120px;
-    height: 120px;
-  }
-}
-
-/* MENU */
+/* ================= MENU ================= */
 #menu {
   padding: 60px 20px;
 }
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
   max-width: 1000px;
   margin: auto;
@@ -188,7 +181,7 @@ body {
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* FORM */
+/* ================= FORM ================= */
 #contact {
   padding: 60px 20px;
 }
@@ -213,7 +206,7 @@ button {
   cursor: pointer;
 }
 
-/* THANK YOU POPUP */
+/* ================= THANK YOU POPUP ================= */
 .thank-you-popup {
   position: fixed;
   inset: 0;
@@ -221,16 +214,36 @@ button {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 9999;
 }
 
-.popup-box {
-  background: white;
+.thank-you-box {
+  background: #fff;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 320px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
-/* SOCIAL */
+.thank-you-box h2 {
+  margin-bottom: 10px;
+  color: #d16ba5;
+}
+
+.thank-you-box button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: #d16ba5;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ================= SOCIAL ================= */
 .social-section {
   padding: 40px;
 }
@@ -250,13 +263,12 @@ button {
   transform: scale(1.2);
 }
 
-/* MAP */
+/* ================= MAP ================= */
 #map-section iframe {
   width: 100%;
   height: 300px;
   border: none;
 }
-
 
 /* ================= GALLERY ================= */
 #gallery {
@@ -352,45 +364,14 @@ button {
   .gallery-grid img {
     scroll-snap-align: center;
   }
-}
 
-.thank-you-popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
+  .ramadan-section h2 {
+    font-size: 1.8rem;
+  }
 
-.thank-you-box {
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  text-align: center;
-  max-width: 320px;
-  width: 90%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.thank-you-box h2 {
-  margin-bottom: 10px;
-  color: #d16ba5;
-}
-
-.thank-you-box button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background: #d16ba5;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
+  .ramadan-section .subtitle {
+    font-size: 0.95rem;
+  }
 }
 
 
